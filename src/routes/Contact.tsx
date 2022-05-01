@@ -12,14 +12,15 @@ function Contact() {
   return (
     <>
       <StyledContact>
-       <Section>
+       <section className="contact">
        <Figure>
-          <img src="../images/face2.jpg"  alt="face" />
+          <img src="./images/form.jpg"  alt="face" />
        </Figure>
+       <h1 className="contact__title">Contact me</h1>
        <Container bg="#ffffff">
            <Form />
        </Container>
-       </Section>
+       </section>
      </StyledContact> 
     </>
   	);  
@@ -30,6 +31,15 @@ const StyledContact = styled.div`
   min-height: 100vh;
   width: 100%;
   text-align: center;
-  background-color: #000000;
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact__title {
+    text-transform: uppercase;
+    color: #444444;
+  }
 `;
 
