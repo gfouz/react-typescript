@@ -21,7 +21,7 @@ const Homepage = () => {
       <ThemeProvider theme={theme}>
         <StyledHome>
           <Banner>
-            <img className="main__image" src="./images/man.jpg" />
+            <img className="main__image" src="./images/header1.jpg" />
             <img className="banner__title" src="./images/port.png" />
             <Logo>
               <h2 className="logo__title">gfouz</h2>
@@ -32,11 +32,10 @@ const Homepage = () => {
             <Navbar />
           </header>
           <Section padding="3em 0">
-            <Paragraph padding="0.5em" titleColor="#029c90">
-              <h3>A little about me</h3>
-              <p>{about}</p>
-            </Paragraph>
             <Aside padding="0.5em" titleColor="#029c90">
+              <div>
+                <img src= "./images/thinking.jpg" alt="woman" />
+              </div>
               <div className="nameless">
                 <h3>Did you know?</h3>
                 <p>
@@ -45,10 +44,11 @@ const Homepage = () => {
                   we have a DOM that has already been built, with all our components rendered as HTML.
                 </p>
               </div>
-              <div>
-                <img src= "./images/young.jpg" alt="woman" />
-              </div>
             </Aside>
+            <Paragraph padding="0.5em" titleColor="#029c90">
+              <h3>A little about me</h3>
+              <p>{about}</p>
+            </Paragraph>
           </Section>
           <article className="stack">
             <Logo>
@@ -137,7 +137,7 @@ const Banner = styled.div`
    position: relative;
     width: 100%;
     text-align: left;
-    background-color: #fefdf9;
+    background-color: #ffffff;
     .main__image {
     max-width: 80%;
     object-fit: cover;
@@ -155,6 +155,7 @@ const Banner = styled.div`
     transform: translate(-50%, -50%);
   }
 `;
+
 const Logo = styled.div`
    position: absolute;
    text-align: center;

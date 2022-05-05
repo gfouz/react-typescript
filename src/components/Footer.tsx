@@ -25,6 +25,7 @@ interface Props {
   lighttext?: any;
   centered?: any;
   justify?: any;
+  dispersed?: any;
 }
 
 function Footer(props: Props) {
@@ -76,13 +77,22 @@ const StyledFooter = styled.footer`
   ${(props: Props) =>
     props.centered &&
     css`
+      display: flex;
       justify-content: center;
       align-items: center;
     `};
   ${(props: Props) =>
     props.justify &&
     css`
+      display: flex;
       justify-content: space-evenly;
+      align-items: center;
+    `};
+    ${(props: Props) =>
+    props.dispersed &&
+    css`
+      display: flex;
+      justify-content: space-between;
       align-items: center;
     `};
   ${(props: Props) =>

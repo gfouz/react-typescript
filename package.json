@@ -20,7 +20,8 @@
     "react-query": "^3.38.1",
     "react-router-dom": "^6.3.0",
     "style-components": "^0.1.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "zustand": "^4.0.0-rc.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.33",

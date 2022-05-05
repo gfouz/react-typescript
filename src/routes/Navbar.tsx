@@ -3,7 +3,8 @@
   import {Link} from 'react-router-dom';    
 
 
-function Navbar() {
+
+function Navbar(props) {
 
   return(
           <>

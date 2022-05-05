@@ -82,7 +82,7 @@ const ReactHookForm = () => {
               </div>
             )}
           />
-          <Button  type="submit" size="medium" color="primary" variant="contained">
+          <Button className="button-submit" type="submit" size="medium" color="primary" variant="contained">
             send
           </Button>
         </form>
@@ -93,6 +93,9 @@ const ReactHookForm = () => {
 export default ReactHookForm;
 
 const StyledForm = styled.div`
+  .form  {
+    
+  }
   .textfield {
     display: flex;
     flex-direction: column;
@@ -104,5 +107,8 @@ const StyledForm = styled.div`
     color: #c51162;
     text-transform: uppercase;
     font-size: 10px;
+  }
+  .button-submit {
+    margin: 2em 0;
   }
 `;

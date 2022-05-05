@@ -14,11 +14,11 @@ do nothing with React is very interesting for me.
 export const about:string = `
 Hello my name is Giovani Fouz and I am self taught web developer. I
 also love English language and music so that when i have a time off i
-enjoy listening to good English songs. I also like electronics and to
+enjoy listening to good English Music. I also like electronics and to
 do interesting things on Arduino boards but it is true that time is
-not  enough.  I  have  been working on cutting metal machine tools for
-many many  years, and  have a good experience on it. I pretend to do
-the   same   thing   with  programming,  and  i  have  a better reason
-for accomplishing, i feel good when i am doing things on my laptop.
+not  enough. I began learning c++ in 2017. But i changed my driving goal
+to other technologies two years later. Since then my focus is on things
+like React, Vue, Express, MongoDB and all the new features related to 
+JavaScript technologies.
 
 `;
