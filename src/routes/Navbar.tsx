@@ -4,7 +4,7 @@
 
 
 
-function Navbar(props) {
+function Navbar() {
 
   return(
           <>
@@ -43,7 +43,6 @@ const StyledNavbar = styled.div`
       height: 100px;
       width: 100%;
       padding: 0;
-      margin: -1px 0;
       background-color: #ffffff;
     }
     &__item {

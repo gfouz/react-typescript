@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled, {css} from 'styled-components';
+import styled, { css } from "styled-components";
 import { useLocation, Link } from "react-router-dom";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   height?: string;
   margin?: string;
   logo?: string;
-  display?:string;
+  display?: string;
   children?: React.ReactNode;
 }
 
@@ -85,7 +85,6 @@ const StyledHeader = styled.div`
     font-family: inherit;
   }
 
- 
   ${(props: Props) =>
     props.mixed &&
     css`
@@ -96,5 +95,4 @@ const StyledHeader = styled.div`
         }
       }
     `}
-
 `;

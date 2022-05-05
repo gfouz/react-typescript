@@ -21,24 +21,24 @@ const Homepage = () => {
       <ThemeProvider theme={theme}>
         <StyledHome>
           <Banner>
-            <img className="main__image" src="./images/header1.jpg" />
-            <img className="banner__title" src="./images/port.png" />
             <Logo>
               <h2 className="logo__title">gfouz</h2>
               <SpyGlass color="#ffffff" size="1.5em" />
             </Logo>
           </Banner>
+          
           <header>
+            <img className="main-title" src="./images/port.png" />
             <Navbar />
           </header>
           <Section padding="3em 0">
-            <Aside padding="0.5em" titleColor="#029c90">
+            <Aside padding="0.5em" titleColor="#029c90" imagePadding="0.5em">
               <div>
                 <img src= "./images/thinking.jpg" alt="woman" />
               </div>
               <div className="nameless">
                 <h3>Did you know?</h3>
-                <p>
+                <p> 
                   React hydration is a technique used that is similar to rendering, 
                   but instead of having an empty DOM to render all of our react components into, 
                   we have a DOM that has already been built, with all our components rendered as HTML.
@@ -100,6 +100,15 @@ export default Homepage;
 const StyledHome = styled.div`
   min-height: 100vh;
   font-family: calibri;
+  header {
+    text-align: center;
+    margin: 3em 1em;
+    img {
+     max-width: 100%;
+     height: auto;
+      
+    }
+  }
   .stack {
     ${({ theme }) => theme.centered()}
     position: relative;
@@ -134,17 +143,18 @@ const StyledHome = styled.div`
   
 `;
 const Banner = styled.div`
-   position: relative;
+    position: relative;
     width: 100%;
-    text-align: left;
-    background-color: #ffffff;
-    .main__image {
-    max-width: 80%;
+    height: 400px;
+    text-align: right;
+    background-image: url('./images/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    .banner__image {
+    max-width: 100%;
     object-fit: cover;
     height: auto;
-    @media (min-width: 700px) {
-    max-width: 30%;
-    }
   }
   .banner__title {
     position: absolute;

@@ -1,8 +1,8 @@
 import * as React from "react";
-import styled from 'styled-components'
+import styled from "styled-components";
 import { TextField, Button } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
-import axios from 'axios';
+import axios from "axios";
 
 type FormValues = {
   email: string;
@@ -55,10 +55,14 @@ const ReactHookForm = () => {
                   color={errors.email ? "secondary" : "primary"}
                 />
                 {errors.email?.type === "pattern" && (
-                  <span className="textfield__warning">email includes an @ symbol !</span>
+                  <span className="textfield__warning">
+                    email includes an @ symbol !
+                  </span>
                 )}
                 {errors.email?.type === "required" && (
-                  <span className="textfield__warning">email is required !</span>
+                  <span className="textfield__warning">
+                    email is required !
+                  </span>
                 )}
               </div>
             )}
@@ -77,12 +81,20 @@ const ReactHookForm = () => {
                   color={errors.message ? "secondary" : "primary"}
                 />
                 {errors.message?.type === "required" && (
-                  <span className="textfield__warning">This field must not be empty !</span>
+                  <span className="textfield__warning">
+                    This field must not be empty !
+                  </span>
                 )}
               </div>
             )}
           />
-          <Button className="button-submit" type="submit" size="medium" color="primary" variant="contained">
+          <Button
+            className="button-submit"
+            type="submit"
+            size="medium"
+            color="primary"
+            variant="contained"
+          >
             send
           </Button>
         </form>
@@ -93,8 +105,7 @@ const ReactHookForm = () => {
 export default ReactHookForm;
 
 const StyledForm = styled.div`
-  .form  {
-    
+  .form {
   }
   .textfield {
     display: flex;
