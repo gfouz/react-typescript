@@ -25,10 +25,10 @@ const Homepage = () => {
               <h2 className="logo__title">gfouz</h2>
               <SpyGlass color="#ffffff" size="1.5em" />
             </Logo>
+            <img className="banner__image" src="./images/html.jpg" />
+            
           </Banner>
-          
           <header>
-            <img className="main-title" src="./images/port.png" />
             <Navbar />
           </header>
           <Section padding="3em 0">
@@ -145,24 +145,25 @@ const StyledHome = styled.div`
 const Banner = styled.div`
     position: relative;
     width: 100%;
-    height: 400px;
     text-align: right;
-    background-image: url('./images/banner.jpg');
+    background-color: #cdcdcd;
+    background-image: url('./images/w.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background-position: center;
     .banner__image {
     max-width: 100%;
-    object-fit: cover;
     height: auto;
+    @media (max-width: 600px){
+      max-width: 40%;
+    }
   }
   .banner__title {
     position: absolute;
-    top:60%;
-    left: 50%;
-    max-width: 80%;
+    top:30%;
+    left: 30%;
+    max-width: 40%;
     height: auto;
-    transform: translate(-50%, -50%);
   }
 `;
 

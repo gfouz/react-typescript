@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from "react";
+import Spinner from './components/Spinner';
 import ReactDOM from "react-dom";
 import "./index.css";
 const Homepage = lazy(() => import("./routes/Homepage"));
@@ -14,8 +15,9 @@ ReactDOM.render(
         <HashRouter>
           <Suspense
             fallback={
-              <div style={{ color: "#ff0000", margin: "3em" }}>
+              <div style={{ color: "#0000ff", textAlign:"center" }}>
                 <h1>Loading...</h1>
+                <Spinner />
               </div>
             }
           >
