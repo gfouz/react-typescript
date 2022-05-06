@@ -7,7 +7,8 @@ interface Props {
   direction?: string;
   margin?: string;
   padding?: string;
-  gridSize?: string
+  textWidth?: string;
+  imageWidth?: string;
   children?: React.ReactNode;
 }
 const Article = (props: Props) => {
@@ -33,7 +34,10 @@ const StyledArticle = styled.article`
   @media (max-width: 700px){
     max-width:100%;
   }
-  .article__grid {
-    width: ${(props: Props) => props.gridSize || "50%"};
+  .article__text {
+    width: ${(props: Props) => props.textWidth || "50%"};
+  }
+  .article__image {
+    width: ${(props: Props) => props.imageWidth || "50%"};
   }
 `;

@@ -2,14 +2,17 @@ import * as React from 'react';
 import styled from 'styled-components'
 
 interface Props {
+    top?: string
+    left?: string
 	color?: string
 	margin?: string
 	padding?: string
 	textAlign?: string
 	fontFamily?: string
 	fontSize?: string
-  transform?: string
-  children?: React.ReactNode
+    transform?: string
+    letterSpacing?: string
+    children?: React.ReactNode
 }
 
 function Heading(props: Props) {
@@ -22,7 +25,10 @@ function Heading(props: Props) {
 export default Heading;
 
 const StyledHeading = styled.article`
+    position: relative;
     width: 100%;
+    top:${(props: Props)=> props.top};
+    left: ${(props: Props)=> props.left};
     text-align: ${(props: Props)=> props.textAlign || "left"};
     margin: ${(props: Props)=> props.margin};
     padding: ${(props: Props)=> props.padding};
@@ -35,5 +41,6 @@ const StyledHeading = styled.article`
     color: ${(props: Props)=> props.color || "#444444"};
     font-family: ${(props: Props)=> props.fontFamily};
     text-transform: ${(props: Props)=> props.transform};
+    letter-spacing: ${(props: Props)=> props.letterSpacing};
     }
 `;

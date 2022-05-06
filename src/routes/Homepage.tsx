@@ -24,17 +24,21 @@ const Homepage = () => {
         <StyledHome>
           <Banner>
             <Logo>
-              <Heading color="#777777"><h3>gfouz</h3></Heading>
-              <SpyGlass color="#444444" size="1em" />
+              <Heading color="#ffffff"><h3>gfouz</h3></Heading>
+              <SpyGlass color="#ffffff" size="1em" />
             </Logo>
-            <Image textAlign="right" >
-               <img  src="./images/banner.jpg" />
-            </Image>
-            <img className="banner__title" src="./images/hello.png" />
+            
+            <img className="banner__image" src="./images/hellobr.png" />
+            <Heading 
+             top="-1em"
+             color="#803300" 
+             letterSpacing="5px"
+             textAlign="center" 
+             >
+             <h3>gfouz</h3>
+            </Heading>
           </Banner>
-          <header>
             <Navbar />
-          </header>
           <Section padding="3em 0" align="flex-start">
             <Container>
               <div className="container__grid">
@@ -75,7 +79,7 @@ const Homepage = () => {
               <Heading color="#666666"><h3>I use the latest technologies</h3></Heading>
               <Text><p>{technologies}</p></Text>
             </Article>
-            <Image padding="2em 1em">
+            <Image margin="2em 0 0 0">
               <img src="./images/face.jpg" />
             </Image>
           </Section>
@@ -143,9 +147,16 @@ const StyledHome = styled.div`
 `;
 const Banner = styled.div`
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    text-align: right;
-    background-color: #f6f6f6;
+    height: 350px;
+    background-image: url('./images/main.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
     .banner__image {
     max-width: 30%;
     height: auto;
