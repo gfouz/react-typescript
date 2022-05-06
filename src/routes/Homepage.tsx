@@ -22,17 +22,17 @@ const Homepage = () => {
         <StyledHome>
           <Banner>
             <Logo>
-              <h2 className="logo__title">gfouz</h2>
-              <SpyGlass color="#ffffff" size="1.5em" />
+              <h3 className="logo__title">gfouz</h3>
+              <SpyGlass color="#444444" size="1em" />
             </Logo>
-            <img className="banner__image" src="./images/html.jpg" />
-            
+            <img className="banner__image" src="./images/banner.jpg" />
+            <img className="banner__title" src="./images/hello.png" />
           </Banner>
           <header>
             <Navbar />
           </header>
           <Section padding="3em 0">
-            <Aside padding="0.5em" titleColor="#029c90" imagePadding="0.5em">
+            <Aside padding="0.5em" titleColor="#006680" imagePadding="0.5em">
               <div>
                 <img src= "./images/thinking.jpg" alt="woman" />
               </div>
@@ -45,7 +45,7 @@ const Homepage = () => {
                 </p>
               </div>
             </Aside>
-            <Paragraph padding="0.5em" titleColor="#029c90">
+            <Paragraph padding="0.5em" titleColor="#006680">
               <h3>A little about me</h3>
               <p>{about}</p>
             </Paragraph>
@@ -100,15 +100,6 @@ export default Homepage;
 const StyledHome = styled.div`
   min-height: 100vh;
   font-family: calibri;
-  header {
-    text-align: center;
-    margin: 3em 1em;
-    img {
-     max-width: 100%;
-     height: auto;
-      
-    }
-  }
   .stack {
     ${({ theme }) => theme.centered()}
     position: relative;
@@ -146,23 +137,19 @@ const Banner = styled.div`
     position: relative;
     width: 100%;
     text-align: right;
-    background-color: #cdcdcd;
-    background-image: url('./images/w.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-color: #f6f6f6;
     .banner__image {
-    max-width: 100%;
+    max-width: 30%;
     height: auto;
     @media (max-width: 600px){
-      max-width: 40%;
+      max-width: 70%;
     }
   }
   .banner__title {
     position: absolute;
-    top:30%;
-    left: 30%;
-    max-width: 40%;
+    top:25%;
+    left: 12%;
+    max-width: 60%;
     height: auto;
   }
 `;
@@ -170,11 +157,10 @@ const Banner = styled.div`
 const Logo = styled.div`
    position: absolute;
    text-align: center;
-   top: 15px;
-   left: 10px;
+   top: 5px;
+   left: 5px;
    .logo__title {
-   color: #ffffff;
-   text-shadow: 1px 1px 10px #000000;
+   color: #444444;
    margin: 5px;
   }
   

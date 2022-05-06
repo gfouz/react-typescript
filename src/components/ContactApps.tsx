@@ -57,6 +57,7 @@ function ContactApps(props: Props) {
 export default ContactApps;
 
 const StyledMedia = styled.nav`
+   width: 100%;
   .media-list {
     padding: 0;
     width: 100%;

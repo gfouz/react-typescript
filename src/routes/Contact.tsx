@@ -5,6 +5,7 @@ import Nav from '../components/Nav'
 import Container from '../components/Container'
 import Figure from '../components/Figure'
 import Form from '../components/Form'
+import ContactApps from '../components/ContactApps'
 import Footer from '../components/Footer'
 
 
@@ -23,8 +24,8 @@ function Contact() {
            <Form />
        </Container>
        </section>
-       <Footer centered >
-          <img src="./images/reaping.jpg" alt="footerImage" />
+       <Footer justify >
+          <ContactApps height="200px" svgColor="#3f51b5" />
        </Footer>
      </StyledContact> 
     </>

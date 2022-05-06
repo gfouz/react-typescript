@@ -35,23 +35,28 @@ function Navbar() {
 export default Navbar;
             
 const StyledNavbar = styled.div`
+
 .navbar {
+    width: 100%;
+    position: relative;
+    top: -4px;
+    background-color: #fe9900;
     &__list {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      height: 100px;
+      height: 30px;
       width: 100%;
       padding: 0;
-      background-color: #ffffff;
+    
     }
     &__item {
       list-style-type: none;
     }
     &__link {
-      margin: 0 1em;
+      margin: 0;
       text-decoration: none;
-      color: #43515a;
+      color: #ffffff;
       font-weight: bolder;
     }
   }
