@@ -40,7 +40,7 @@ const StyledNavbar = styled.div`
     width: 100%;
     position: relative;
     top: -4px;
-    background-color: #071019;
+    background-color: #292925;
     &__list {
       display: flex;
       justify-content: space-evenly;
