@@ -1,11 +1,13 @@
 import { theme } from "../theme";
 import styled, { ThemeProvider } from "styled-components";
 interface Props {
+  maxWidth?: string;
+  align?: string;
+  justify?: string;
+  direction?: string;
   margin?: string;
   padding?: string;
-  breakpoint?: string;
-  textColor?: string;
-  textMargin?: string;
+  gridSize?: string
   children?: React.ReactNode;
 }
 const Article = (props: Props) => {
@@ -20,15 +22,18 @@ const Article = (props: Props) => {
 
 export default Article;
 const StyledArticle = styled.article`
+  position: relative;
+  display: flex;
+  align-items: ${(props: Props)=> props.align || "center"};
+  justify-content: ${(props: Props)=> props.justify || "flex-start"};
+  flex-direction: ${(props: Props)=> props.direction || "column"};
+  max-width: ${(props: Props) => props.maxWidth || "400px"};
   margin: ${(props: Props) => props.margin || "0"};
-  ${({ theme }) => theme.article("400px")};    
-  @media (max-width: ${(props: Props) => props.breakpoint || "700px"}) {
-  ${({ theme }) => theme.article("600px")};  
+  padding: ${(props: Props) => props.padding || "0"};
+  @media (max-width: 700px){
+    max-width:100%;
   }
-  p, h1,h2,h3,h4,h5,h5 {
-    padding: ${(props: Props) => props.padding || "0"};
-    margin: ${(props: Props) => props.textMargin || "0"};
-    color: ${(props: Props) => props.textColor};
+  .article__grid {
+    width: ${(props: Props) => props.gridSize || "50%"};
   }
 `;
-

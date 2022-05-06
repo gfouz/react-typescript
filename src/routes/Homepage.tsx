@@ -5,9 +5,11 @@ import { about, technologies } from './content';
 import ContactApps from '../components/ContactApps'
 import Section from '../components/Section'
 import Article from '../components/Article'
-import Paragraph from '../components/Paragraph'
-import Figure from '../components/Figure'
+import Container from '../components/Container'
+import Text from '../components/Text'
+import Image from '../components/Image'
 import Aside from '../components/Aside'
+import Heading from '../components/Heading'
 import SpyGlass from '../icons/SpyGlass'
 import GitAlt from '../icons/GitAlt'
 import Navbar from './Navbar'
@@ -22,37 +24,43 @@ const Homepage = () => {
         <StyledHome>
           <Banner>
             <Logo>
-              <h3 className="logo__title">gfouz</h3>
+              <Heading color="#777777"><h3>gfouz</h3></Heading>
               <SpyGlass color="#444444" size="1em" />
             </Logo>
-            <img className="banner__image" src="./images/banner.jpg" />
+            <Image textAlign="right" >
+               <img  src="./images/banner.jpg" />
+            </Image>
             <img className="banner__title" src="./images/hello.png" />
           </Banner>
           <header>
             <Navbar />
           </header>
-          <Section padding="3em 0">
-            <Aside padding="0.5em" titleColor="#006680" imagePadding="0.5em">
-              <div>
+          <Section padding="3em 0" align="flex-start">
+            <Container>
+              <div className="container__grid">
                 <img src= "./images/thinking.jpg" alt="woman" />
               </div>
-              <div className="nameless">
-                <h3>Did you know?</h3>
-                <p> 
+              <div className="container__grid">
+                <Heading color="#666666" padding="0 0.5em"><h3>Did you know?</h3></Heading>
+                <Text padding="0 0.5em">
+                 <p> 
                   React hydration is a technique used that is similar to rendering, 
                   but instead of having an empty DOM to render all of our react components into, 
                   we have a DOM that has already been built, with all our components rendered as HTML.
-                </p>
+                 </p> 
+                </Text>
               </div>
-            </Aside>
-            <Paragraph padding="0.5em" titleColor="#006680">
-              <h3>A little about me</h3>
-              <p>{about}</p>
-            </Paragraph>
+            </Container>
+            <Article padding="0 0.5em">
+              <Heading color="#666666" padding="0 0.5em"><h3>A little about me</h3></Heading>
+              <Text padding="0 0.5em">
+                <p>{about}</p>
+              </Text>
+            </Article>
           </Section>
           <article className="stack">
             <Logo>
-              <h2 className="logo__title">gfouz</h2>
+              <Heading color="#ffffff"><h3>gfouz</h3></Heading>
               <SpyGlass color="#ffffff" size="1.5em" />
             </Logo>
             <div className="stack__list">
@@ -63,13 +71,13 @@ const Homepage = () => {
             </div>
           </article>
           <Section padding="2em 0" bg="#181818">
-            <Paragraph padding="0.1em 1em" textColor="#b2b2b2">
-              <h3>I use these technologies</h3>
-              <p>{technologies}</p>
-            </Paragraph>
-            <Figure imagePercentage="60%" padding="2em 1em">
-              <img className="technical__image" src="./images/face.jpg" />
-            </Figure>
+            <Article padding="0.1em 1em">
+              <Heading color="#666666"><h3>I use the latest technologies</h3></Heading>
+              <Text><p>{technologies}</p></Text>
+            </Article>
+            <Image padding="2em 1em">
+              <img src="./images/face.jpg" />
+            </Image>
           </Section>
           <section className="contact"> 
                  <ContactApps height="200px" svgColor="#555555"/>

@@ -23,6 +23,7 @@ function Paragraph(props: Props) {
 export default Paragraph;
 
 const StyledParagraph = styled.article`
+  .paragraphs { 
   padding: ${(props: Props) => props.padding || "0"};
   margin: ${(props: Props) => props.margin || "0"};
   max-width: ${(props: Props) => props.maxWidth || "400px"};
@@ -47,4 +48,5 @@ const StyledParagraph = styled.article`
     padding: ${(props: Props) => props.titlePadding || "0"};
     margin: ${(props: Props) => props.titleMargin || "0"};
   }
+}
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { about, technologies } from './content';
 import Nav from '../components/Nav'
 import Container from '../components/Container'
-import Figure from '../components/Figure'
+import Image from '../components/Image'
 import Form from '../components/Form'
 import ContactApps from '../components/ContactApps'
 import Footer from '../components/Footer'
@@ -16,9 +16,9 @@ function Contact() {
       <StyledContact>
        <Nav bg="#3f51b5" color="#ffffff"/>
        <section className="contact">
-       <Figure imagePercentage="80%">
+       <Image>
           <img src="./images/contact.jpg"  alt="face" />
-       </Figure>
+       </Image>
        <h1 className="contact__title">Contact me</h1>
        <Container bg="#ffffff">
            <Form />
