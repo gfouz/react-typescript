@@ -7,7 +7,8 @@ interface Props {
   top?: string;
   left?: string;
   display?: string;
-  background?: string;
+  bg?: string;
+  height?: string;
   textShadow?: string;
   textPadding?: string;
   textMargin?: string;
@@ -40,8 +41,10 @@ export default Footer;
 const StyledFooter = styled.footer`
   position: relative;
   width: 100%;
+  height: ${(props: Props)=> props.height || "50px"};
   display: ${(props: Props) => props.display};
   text-align: ${(props: Props) => props.textAlign};
+  background-color: ${(props: Props) => props.bg};
   h1,
   h2,
   h3,
@@ -64,7 +67,7 @@ const StyledFooter = styled.footer`
     top: ${(props: Props) => props.top || "0"};
     left: ${(props: Props) => props.left || "0"};
     text-shadow: ${(props: Props) => props.textShadow};
-    background-color: ${(props: Props) => props.background};
+    background-color: ${(props: Props) => props.bg};
   }
   img {
     max-width: ${(props: Props) => props.imageSize || "100%"};

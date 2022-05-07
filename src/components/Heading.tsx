@@ -8,7 +8,7 @@ interface Props {
 	margin?: string
 	padding?: string
 	textAlign?: string
-	fontFamily?: string
+	font?: string
 	fontSize?: string
     transform?: string
     letterSpacing?: string
@@ -39,7 +39,8 @@ const StyledHeading = styled.article`
     h5,
     h6 {
     color: ${(props: Props)=> props.color || "#444444"};
-    font-family: ${(props: Props)=> props.fontFamily};
+    font-family: ${(props: Props)=> props.font || "calibri"};
+    font-size: ${(props: Props)=> props.fontSize};
     text-transform: ${(props: Props)=> props.transform};
     letter-spacing: ${(props: Props)=> props.letterSpacing};
     }

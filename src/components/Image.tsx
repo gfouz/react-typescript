@@ -2,6 +2,7 @@ import { theme } from "../theme";
 import styled, { ThemeProvider } from "styled-components";
 
 interface Props {
+  src?: string;
   margin?: string;
   padding?: string;
   textAlign?: string;
@@ -13,7 +14,9 @@ const Image = (props: Props) => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <StyledImage {...props}>{props.children}</StyledImage>
+        <StyledImage {...props}>
+          <img src={props.src} />
+        </StyledImage>
       </ThemeProvider>
     </>
   );

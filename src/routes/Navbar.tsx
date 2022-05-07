@@ -12,14 +12,14 @@ function Navbar() {
             <nav className="navbar">
               <ul className="navbar__list">
                 <li className="navbar__item">
-                  <Link  to="/contact" className="navbar__link">
-                    CONTACT
-                  </Link>
-                </li>
-                <li className="navbar__item">
                   <a href="https://gfouz.github.io/react-workshop/#/work" className="navbar__link">
                     WORK
                   </a>
+                </li>
+                <li className="navbar__item">
+                  <Link  to="/contact" className="navbar__link">
+                     CONTACT
+                  </Link>
                 </li>
                 <li className="navbar__item">
                   <a href="https://gfouz.github.io/react-workshop/#/blog" className="navbar__link">
@@ -35,17 +35,16 @@ function Navbar() {
 export default Navbar;
             
 const StyledNavbar = styled.div`
-
+ width: 100%;
 .navbar {
     width: 100%;
     position: relative;
-    top: -4px;
-    background-color: #292925;
+
     &__list {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      height: 30px;
+      height: 60px;
       width: 100%;
       padding: 0;
     
@@ -56,7 +55,7 @@ const StyledNavbar = styled.div`
     &__link {
       margin: 0;
       text-decoration: none;
-      color: #ffffff;
+      color: #e6e6fa;
       font-weight: bolder;
     }
   }

@@ -7,6 +7,7 @@ import Image from '../components/Image'
 import Form from '../components/Form'
 import ContactApps from '../components/ContactApps'
 import Footer from '../components/Footer'
+import Heading from '../components/Heading'
 
 
 
@@ -16,16 +17,17 @@ function Contact() {
       <StyledContact>
        <Nav bg="#3f51b5" color="#ffffff"/>
        <section className="contact">
-       <Image>
-          <img src="./images/contact.jpg"  alt="face" />
-       </Image>
+       <Image src="./images/contact.jpg"  margin="3em 0 0 0"/>
        <h1 className="contact__title">Contact me</h1>
        <Container bg="#ffffff">
            <Form />
        </Container>
        </section>
-       <Footer justify >
-          <ContactApps height="200px" svgColor="#3f51b5" />
+       <ContactApps height="200px" svgColor="#3f51b5" />
+       <Footer justify bg="#3f51b5">
+          <Heading textAlign="center" color="#ffffff">
+             <h3>gfouz 2022</h3>
+          </Heading>
        </Footer>
      </StyledContact> 
     </>

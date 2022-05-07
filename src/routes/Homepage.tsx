@@ -1,7 +1,7 @@
 import * as React from 'react'
-import styled, { ThemeProvider } from "styled-components";
-import { theme } from "../theme";
-import { about, technologies } from './content';
+import styled, { ThemeProvider } from "styled-components"
+import { theme } from "../theme"
+import { about, technologies } from './content'
 import ContactApps from '../components/ContactApps'
 import Section from '../components/Section'
 import Article from '../components/Article'
@@ -10,6 +10,7 @@ import Text from '../components/Text'
 import Image from '../components/Image'
 import Aside from '../components/Aside'
 import Heading from '../components/Heading'
+import HorizonLine from '../components/HorizonLine'
 import SpyGlass from '../icons/SpyGlass'
 import GitAlt from '../icons/GitAlt'
 import Navbar from './Navbar'
@@ -27,20 +28,28 @@ const Homepage = () => {
               <Heading color="#ffffff"><h3>gfouz</h3></Heading>
               <SpyGlass color="#ffffff" size="1em" />
             </Logo>
-            
-            <img className="banner__image" src="./images/hellobr.png" />
-            <Heading 
-             top="-1em"
-             color="#803300" 
-             letterSpacing="5px"
-             textAlign="center" 
-             >
-             <h3>gfouz</h3>
-            </Heading>
+            <div className="banner__title">
+              <Heading 
+                top="-1em"
+                fontSize="2.5em" 
+                color="#e6e6fa" 
+                font="literata">
+                <h1>Portfolio</h1>
+              </Heading>
+            </div>
+            <HorizonLine />
+            <div className="banner__navbar">
+              <Navbar />
+            </div> 
           </Banner>
-            <Navbar />
           <Section padding="3em 0" align="flex-start">
-            <Container>
+            <Article padding="0 0.5em">
+              <Heading color="#666666" padding="0 0.5em"><h3>A little about me</h3></Heading>
+              <Text padding="0 0.5em">
+                <p>{about}</p>
+              </Text>
+            </Article>
+             <Container>
               <div className="container__grid">
                 <img src= "./images/thinking.jpg" alt="woman" />
               </div>
@@ -55,17 +64,11 @@ const Homepage = () => {
                 </Text>
               </div>
             </Container>
-            <Article padding="0 0.5em">
-              <Heading color="#666666" padding="0 0.5em"><h3>A little about me</h3></Heading>
-              <Text padding="0 0.5em">
-                <p>{about}</p>
-              </Text>
-            </Article>
           </Section>
           <article className="stack">
             <Logo>
-              <Heading color="#ffffff"><h3>gfouz</h3></Heading>
-              <SpyGlass color="#ffffff" size="1.5em" />
+              <Heading color="#444444"><h3>gfouz</h3></Heading>
+              <SpyGlass color="#444444" size="1.5em" />
             </Logo>
             <div className="stack__list">
               <h4 className="stack__title">Modern React State</h4>
@@ -79,28 +82,11 @@ const Homepage = () => {
               <Heading color="#666666"><h3>I use the latest technologies</h3></Heading>
               <Text><p>{technologies}</p></Text>
             </Article>
-            <Image margin="2em 0 0 0">
-              <img src="./images/face.jpg" />
-            </Image>
+            <Image src="./images/face.jpg" margin="2em 0 0 0" />
           </Section>
-          <section className="contact"> 
-                 <ContactApps height="200px" svgColor="#555555"/>
-          </section>
-          <Footer 
-            top="80%" 
-            left="25%" 
-            lighttext 
-            textAlign="right" 
-            boxBg="#224e7f"
-            boxPadding="0.5em 2em"
-            >
-             <div>
-                <h4 >gfouz &copy; {new Date().getFullYear()}</h4>
-                <ContactApps size="20px"/>
-                <p>gfouz1975@gmail.com</p>
-             </div> 
-             <img  src="./images/submarine.jpg" />  
-          </Footer>
+          <div className="contact"> 
+              
+          </div>
         </StyledHome>
       </ThemeProvider>
     </>
@@ -112,6 +98,14 @@ export default Homepage;
 const StyledHome = styled.div`
   min-height: 100vh;
   font-family: calibri;
+  .contact {
+    width: 100%;
+    height: 400px;
+    background-image: url('./images/coffeecup.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   .stack {
     ${({ theme }) => theme.centered()}
     position: relative;
@@ -153,25 +147,34 @@ const Banner = styled.div`
     justify-content: center;
     width: 100%;
     height: 350px;
-    background-image: url('./images/main.jpg');
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    .banner__image {
-    max-width: 30%;
-    height: auto;
-    @media (max-width: 600px){
-      max-width: 70%;
+    background-color: #333333;
+    .banner__title {
+    animation: title 1s;
+    animation-fill-mode: forwards;
     }
-  }
-  .banner__title {
-    position: absolute;
-    top:25%;
-    left: 12%;
-    max-width: 60%;
-    height: auto;
-  }
-`;
+    .banner__navbar {
+    width: 100%;  
+    animation: navbar 6s;
+    animation-fill-mode: forwards;
+    }
+    @keyframes title {
+      from {
+        transform: rotateY(180deg);
+      }
+      to {
+        transform: rotateY(0);
+
+      }
+    }
+    @keyframes navbar {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+`; 
 
 const Logo = styled.div`
    position: absolute;
@@ -182,7 +185,6 @@ const Logo = styled.div`
    color: #444444;
    margin: 5px;
   }
-  
 `;
 //https://github.com/gfouz/react-tsx.git
 //You can also disable this overlay by setting server.hmr.overlay to false in vite.config.js.

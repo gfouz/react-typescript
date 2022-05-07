@@ -7,6 +7,7 @@ interface Props {
   margin?: string;
   align?: string;
   justify?: string;
+  direction?: string;
   breakpoint?: string;
   children?: React.ReactNode;
 }
@@ -24,6 +25,7 @@ export default Section;
 const StyledSection = styled.section`
   width: 100%;
   display: flex;
+  flex-direction: ${(props: Props)=> props.direction || "row"};
   align-items: ${(props: Props)=> props.align || "center"};
   justify-content: ${(props: Props)=> props.justify || "space-evenly"};
   margin: ${(props: Props) => props.margin || "0"};
