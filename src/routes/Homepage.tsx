@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from "styled-components"
 import { theme } from "../theme"
 import { about, technologies } from './content'
 import ContactApps from '../components/ContactApps'
+import Flexbox from '../components/Flexbox'
 import Section from '../components/Section'
 import Article from '../components/Article'
 import Container from '../components/Container'
@@ -41,6 +42,7 @@ const Homepage = () => {
             <div className="banner__navbar">
               <Navbar />
             </div> 
+            <SpyGlass color="#ffffff" size="1.5em"/>
           </Banner>
           <Section padding="3em 0" align="flex-start">
             <Article padding="0 0.5em">
@@ -50,10 +52,10 @@ const Homepage = () => {
               </Text>
             </Article>
              <Container>
-              <div className="container__grid">
+              <div className="container__image">
                 <img src= "./images/thinking.jpg" alt="woman" />
               </div>
-              <div className="container__grid">
+              <div className="container__text">
                 <Heading color="#666666" padding="0 0.5em"><h3>Did you know?</h3></Heading>
                 <Text padding="0 0.5em">
                  <p> 
@@ -84,9 +86,16 @@ const Homepage = () => {
             </Article>
             <Image src="./images/face.jpg" margin="2em 0 0 0" />
           </Section>
-          <div className="contact"> 
-              
-          </div>
+          <article className="notfinished">
+            <h1>without finishing</h1>
+          </article>
+          <Footer height="50px" bg="#222222">
+          <Flexbox row>
+            <Heading color="#ffffff">
+              <h3>gfouz {new Date().getFullYear()}</h3>
+            </Heading> 
+          </Flexbox>
+        </Footer>
         </StyledHome>
       </ThemeProvider>
     </>
@@ -98,7 +107,10 @@ export default Homepage;
 const StyledHome = styled.div`
   min-height: 100vh;
   font-family: calibri;
-  .contact {
+  .notfinished {
+    text-align: center;
+    color: #ffffff;
+    line-height: 400px;
     width: 100%;
     height: 400px;
     background-image: url('./images/coffeecup.jpg');
@@ -153,7 +165,8 @@ const Banner = styled.div`
     animation-fill-mode: forwards;
     }
     .banner__navbar {
-    width: 100%;  
+    width: 100%; 
+    margin:0 0 2em 0; 
     animation: navbar 6s;
     animation-fill-mode: forwards;
     }

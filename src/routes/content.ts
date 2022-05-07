@@ -7,7 +7,7 @@ some react technologies as styled-components, Material UI,
 react-query, react-hook-form and NextJs and very soon i will be
 learning about Deno that is a new technology on the server side,
 and that includes TypeScript by default, even though this has to 
-do nothing with React is very interesting for me.
+do nothing with React is very important for me.
 
 
 `;

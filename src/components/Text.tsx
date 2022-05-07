@@ -30,7 +30,7 @@ const StyledText = styled.article`
     font-family: ${(props: Props) => props.fontFamily || "calibri"};
     font-size: ${(props: Props) => props.fontSize};
   }
-  @media (min-width: 700px) {
+  @media (min-width: 820px) {
     max-width: ${(props: Props) => props.maxWidth || "400px"};
   }
 `;

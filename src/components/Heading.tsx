@@ -5,6 +5,7 @@ interface Props {
     top?: string
     left?: string
 	color?: string
+    width?: string
 	margin?: string
 	padding?: string
 	textAlign?: string
@@ -26,7 +27,7 @@ export default Heading;
 
 const StyledHeading = styled.article`
     position: relative;
-    width: 100%;
+    width: ${(props: Props)=> props.width || "fit-content"};
     top:${(props: Props)=> props.top};
     left: ${(props: Props)=> props.left};
     text-align: ${(props: Props)=> props.textAlign || "left"};

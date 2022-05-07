@@ -2,31 +2,14 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 interface Props {
-  children?: React.ReactNode;
-  textAlign?: string;
-  top?: string;
-  left?: string;
-  display?: string;
   bg?: string;
+  color?: string;
+  itemOne?: string;
+  itemTwo?: string;
   height?: string;
-  textShadow?: string;
-  textPadding?: string;
-  textMargin?: string;
-  imageSize?: string;
-  imageMargin?: string;
-  imagePadding?: string;
-  titleColor?: string;
-  titlePosition?: string;
-  titleLeft?: string;
-  titleTop?: string;
-  titleMargin?: string;
-  titlePadding?: string;
-  boxBg?: string;
-  boxPadding?: string;
-  lighttext?: any;
-  centered?: any;
-  justify?: any;
-  dispersed?: any;
+  simple?: string;
+  textAlign?: string;
+  children?: React.ReactNode;
 }
 
 function Footer(props: Props) {
@@ -39,82 +22,17 @@ function Footer(props: Props) {
 export default Footer;
 
 const StyledFooter = styled.footer`
-  position: relative;
-  width: 100%;
-  height: ${(props: Props)=> props.height || "50px"};
-  display: ${(props: Props) => props.display};
-  text-align: ${(props: Props) => props.textAlign};
-  background-color: ${(props: Props) => props.bg};
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    position: ${(props: Props) => props.titlePosition};
-    left: ${(props: Props) => props.titleLeft};
-    top: ${(props: Props) => props.titleTop};
-    padding: ${(props: Props) => props.titlePadding || "0"};
-    margin: ${(props: Props) => props.titleMargin || "0"};
-    color: ${(props: Props) => props.titleColor};
-  }
-  div {
-    text-align: center;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    padding: ${(props: Props) => props.textPadding || "0"};
-    margin: ${(props: Props) => props.textMargin || "0"};
-    top: ${(props: Props) => props.top || "0"};
-    left: ${(props: Props) => props.left || "0"};
-    text-shadow: ${(props: Props) => props.textShadow};
-    background-color: ${(props: Props) => props.bg};
-  }
-  img {
-    max-width: ${(props: Props) => props.imageSize || "100%"};
-    padding: ${(props: Props) => props.imagePadding || "0"};
-    margin: ${(props: Props) => props.imageMargin || "0"};
-    object-fit: cover;
-    height: 100%;
-  }
-
+  height: ${(props: Props) => props.height};
+  color: ${(props: Props)=> props.color};
+  background-color: ${(props: Props)=> props.bg};
   ${(props: Props) =>
-    props.centered &&
+    props.simple &&
     css`
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    `};
-  ${(props: Props) =>
-    props.justify &&
-    css`
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-    `};
-    ${(props: Props) =>
-    props.dispersed &&
-    css`
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    `};
-  ${(props: Props) =>
-    props.lighttext &&
-    css`
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      p {
-        color: #ffffff;
-      }
-      div {
-        background-color: ${(props: Props) => props.boxBg || "#22222240"};
-        box-shadow: 1px 1px 10px #222222;
-        border-radius: 5px;
-        padding: ${(props: Props) => props.boxPadding || "0"};
-      }
+      --full-height: ${(props: Props) => props.height}
+      width: 100%;
+      position: relative;
+      height: var(--full-height);
+      line-height: var(--full-height);
+      text-align: ${(props: Props) => props.textAlign || "center"};
     `};
 `;

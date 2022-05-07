@@ -31,7 +31,7 @@ const StyledArticle = styled.article`
   max-width: ${(props: Props) => props.maxWidth || "400px"};
   margin: ${(props: Props) => props.margin || "0"};
   padding: ${(props: Props) => props.padding || "0"};
-  @media (max-width: 700px){
+  @media (max-width: 820px){
     max-width:100%;
   }
   .article__text {
