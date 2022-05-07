@@ -7,6 +7,7 @@ interface Props {
   itemOne?: string;
   itemTwo?: string;
   height?: string;
+  padding?: string;
   simple?: string;
   textAlign?: string;
   children?: React.ReactNode;
@@ -22,9 +23,13 @@ function Footer(props: Props) {
 export default Footer;
 
 const StyledFooter = styled.footer`
+  position: relative;
+  display: flex;
+  width: 100%;
   height: ${(props: Props) => props.height};
-  color: ${(props: Props)=> props.color};
-  background-color: ${(props: Props)=> props.bg};
+  padding: ${(props: Props)=> props.padding || "0"};
+  color: ${(props: Props) => props.color};
+  background-color: ${(props: Props) => props.bg};
   ${(props: Props) =>
     props.simple &&
     css`

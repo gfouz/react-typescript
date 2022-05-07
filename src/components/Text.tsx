@@ -5,7 +5,8 @@ interface Props {
    color?: string
    fontFamily?: string
    fontSize?: string
-   maxWidth?: string
+   width?: string
+   maxwidth?: string
    padding?: string
    margin?: string
    children?: React.ReactNode
@@ -22,7 +23,8 @@ const Text = (props: Props)=> {
 export default Text;
 
 const StyledText = styled.article`
-  max-width: ${(props: Props) => props.maxWidth || "100%"};
+  width: ${(props: Props)=> props.width};
+  max-width: ${(props: Props)=> props.maxwidth || "400px"};
   padding: ${(props: Props)=> props.padding};
   margin: ${(props: Props)=> props.margin};
   p {
@@ -30,7 +32,7 @@ const StyledText = styled.article`
     font-family: ${(props: Props) => props.fontFamily || "calibri"};
     font-size: ${(props: Props) => props.fontSize};
   }
-  @media (min-width: 820px) {
-    max-width: ${(props: Props) => props.maxWidth || "400px"};
+  @media (max-width: 820px) {
+    max-width: 100%;
   }
 `;

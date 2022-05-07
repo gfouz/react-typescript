@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components"
 import { theme } from "../theme"
 import { about, technologies } from './content'
 import ContactApps from '../components/ContactApps'
-import Flexbox from '../components/Flexbox'
+import Div from '../components/Div'
 import Section from '../components/Section'
 import Article from '../components/Article'
 import Container from '../components/Container'
@@ -44,20 +44,26 @@ const Homepage = () => {
             </div> 
             <SpyGlass color="#ffffff" size="1.5em"/>
           </Banner>
-          <Section padding="3em 0" align="flex-start">
-            <Article padding="0 0.5em">
-              <Heading color="#666666" padding="0 0.5em"><h3>A little about me</h3></Heading>
+          <Section padding="2em 0" align="flex-start">
+            <Article padding="0.5em">
+              <Heading color="#666666" padding="0 0.5em" width="100%"><h3>A little about me</h3></Heading>
               <Text padding="0 0.5em">
                 <p>{about}</p>
               </Text>
             </Article>
-             <Container>
+             <Container padding="0.5em">
               <div className="container__image">
-                <img src= "./images/thinking.jpg" alt="woman" />
+                <Image 
+                  src= "./images/thinking.jpg" 
+                  alt="man" 
+                  height="100%"
+                  fit="cover"
+                  padding="2em"
+                />
               </div>
               <div className="container__text">
-                <Heading color="#666666" padding="0 0.5em"><h3>Did you know?</h3></Heading>
-                <Text padding="0 0.5em">
+                <Heading color="#666666" padding="0.8em 0 0 0.5em"><h3>Did you know?</h3></Heading>
+                <Text padding="0 0.7em">
                  <p> 
                   React hydration is a technique used that is similar to rendering, 
                   but instead of having an empty DOM to render all of our react components into, 
@@ -72,30 +78,41 @@ const Homepage = () => {
               <Heading color="#444444"><h3>gfouz</h3></Heading>
               <SpyGlass color="#444444" size="1.5em" />
             </Logo>
+            <Div row>
             <div className="stack__list">
-              <h4 className="stack__title">Modern React State</h4>
+              <h4 className="stack__title">Modern React State management</h4>
               <h4 className="stack__title">zustang</h4>
               <h4 className="stack__title">react-query</h4>
               <h4 className="stack__title">react-hook-form</h4>
             </div>
+            </Div>
           </article>
           <Section padding="2em 0" bg="#181818">
             <Article padding="0.1em 1em">
-              <Heading color="#666666"><h3>I use the latest technologies</h3></Heading>
+              <Heading color="#666666" width="100%"><h3>Latest technologies</h3></Heading>
               <Text><p>{technologies}</p></Text>
             </Article>
-            <Image src="./images/face.jpg" margin="2em 0 0 0" />
-          </Section>
-          <article className="notfinished">
-            <h1>without finishing</h1>
-          </article>
-          <Footer height="50px" bg="#222222">
-          <Flexbox row>
-            <Heading color="#ffffff">
-              <h3>gfouz {new Date().getFullYear()}</h3>
-            </Heading> 
-          </Flexbox>
-        </Footer>
+            <Article padding="0.1em 1em">
+              <Heading color="#666666" width="100%"><h3>Latest technologies</h3></Heading>
+              <Text><p>{technologies}</p></Text>
+            </Article>
+          </Section> 
+          <Footer bg="#434343">
+          <Div row justify="space-evenly" width="100%">
+            <Div width="50%" row justify="flex-start">
+             <Image src="./images/footer.jpg" />
+            </Div>
+            <Div width="50%" row height="100%">
+             <Text padding="1em" color="#ffffff">
+                 <p> 
+                  React hydration is a technique used that is similar to rendering, 
+                  but instead of having an empty DOM to render all of our react components into, 
+                  we have a DOM that has already been built, with all our components rendered as HTML.
+                 </p> 
+             </Text>
+            </Div> 
+           </Div>
+          </Footer>
         </StyledHome>
       </ThemeProvider>
     </>
@@ -134,10 +151,6 @@ const StyledHome = styled.div`
     height: auto;
   }
   .stack__list {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     padding: 0.5em;
     border-radius: 5px;
     background-color: #22222290;
@@ -158,7 +171,7 @@ const Banner = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 350px;
+    padding: 5em;
     background-color: #333333;
     .banner__title {
     animation: title 1s;

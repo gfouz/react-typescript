@@ -18,9 +18,7 @@ const ReactHookForm = () => {
       message: "",
     },
   });
-
   const url: string = "https://formspree.io/f/mbjwalqp";
-
   function onSubmit(data: FormValues) {
     setClose(true);
     axios

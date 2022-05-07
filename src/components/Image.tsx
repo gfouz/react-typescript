@@ -3,11 +3,15 @@ import styled, { ThemeProvider } from "styled-components";
 
 interface Props {
   src?: string;
+  alt?: string;
   margin?: string;
   padding?: string;
-  textAlign?: string;
-  maxWidth?: string;
-  imageSize?: string;
+  align?: string;
+  width?: string;
+  maxwidth?: string;
+  size?: string;
+  height?: string;
+  imageheight?: string;
   children?: React.ReactNode;
 }
 const Image = (props: Props) => {
@@ -15,7 +19,7 @@ const Image = (props: Props) => {
     <>
       <ThemeProvider theme={theme}>
         <StyledImage {...props}>
-          <img src={props.src} />
+          <img src={props.src} alt={props.alt}/>
         </StyledImage>
       </ThemeProvider>
     </>
@@ -24,20 +28,17 @@ const Image = (props: Props) => {
 
 export default Image;
 const StyledImage = styled.div`
-    text-align: ${(props: Props)=> props.textAlign || "center"};
-    max-width: ${(props: Props) => props.maxWidth || "400px"}
+    height: ${(props: Props) => props.height || "100%"};
+    text-align: ${(props: Props)=> props.align || "center"};
+    max-width: ${(props: Props) => props.maxwidth || "400px"};
+    width: ${(props: Props) => props.width || "400px"}
     padding: ${(props: Props) => props.padding || "0"};
     img {
     margin: ${(props: Props) => props.margin || "0"};  
-    max-width: ${(props: Props) => props.imageSize || "100%"};
-    height: auto;
+    max-width: ${(props: Props) => props.size || "100%"};
+    height: ${(props: Props)=> props.imageheight || "auto"};
+    object-fit: ${(props: Props)=> props.fit || "none"};
     }
-    @media (max-width: 700px) {
-    max-width: 100%;
-    img {
-    max-width: "100%";
-    height: auto;
-    }
-    }
+    
     
 `;

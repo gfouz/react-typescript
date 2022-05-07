@@ -3,8 +3,9 @@ import styled from 'styled-components'
 
 interface Props {
 	bg?: string;
-	maxWidth?: string;
+	width?: string;
 	margin?: string;
+	padding?: string;
 	children?: React.ReactNode;
 	
 }
@@ -21,15 +22,13 @@ function Container(props: Props) {
 }
 export default Container;
 
-const StyledContainer = styled.div`
-max-width: ${(props: Props)=> props.maxWidth || "400px"};
-@media (max-width: 820px) {
-		max-width: 100%;
-	}
-margin: ${(props: Props)=> props.margin || "0"};
+const StyledContainer = styled.article`
 display: flex;
+max-width: ${(props: Props)=> props.width || "400px"};
+margin: ${(props: Props)=> props.margin || "0"};
+padding: ${(props: Props)=> props.padding || "0"};
 background-color: ${(props: Props)=> props.bg || "transparent"};
-.container__image {
+ .container__image {
 	width: 50%;
 	text-align: center;
 	img {
@@ -42,4 +41,7 @@ background-color: ${(props: Props)=> props.bg || "transparent"};
 	width: 50%;
 	text-align: left;
 }
+@media (max-width: 820px) {
+		max-width: 100%;
+	}
 `;

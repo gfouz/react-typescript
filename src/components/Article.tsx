@@ -1,7 +1,7 @@
 import { theme } from "../theme";
 import styled, { ThemeProvider } from "styled-components";
 interface Props {
-  maxWidth?: string;
+  width?: string;
   align?: string;
   justify?: string;
   direction?: string;
@@ -28,7 +28,7 @@ const StyledArticle = styled.article`
   align-items: ${(props: Props)=> props.align || "center"};
   justify-content: ${(props: Props)=> props.justify || "flex-start"};
   flex-direction: ${(props: Props)=> props.direction || "column"};
-  max-width: ${(props: Props) => props.maxWidth || "400px"};
+  max-width: ${(props: Props) => props.width || "400px"};
   margin: ${(props: Props) => props.margin || "0"};
   padding: ${(props: Props) => props.padding || "0"};
   @media (max-width: 820px){

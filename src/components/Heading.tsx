@@ -8,9 +8,9 @@ interface Props {
     width?: string
 	margin?: string
 	padding?: string
-	textAlign?: string
+	align?: string
 	font?: string
-	fontSize?: string
+	size?: string
     transform?: string
     letterSpacing?: string
     children?: React.ReactNode
@@ -30,8 +30,7 @@ const StyledHeading = styled.article`
     width: ${(props: Props)=> props.width || "fit-content"};
     top:${(props: Props)=> props.top};
     left: ${(props: Props)=> props.left};
-    text-align: ${(props: Props)=> props.textAlign || "left"};
-    margin: ${(props: Props)=> props.margin};
+    text-align: ${(props: Props)=> props.align || "left"};
     padding: ${(props: Props)=> props.padding};
     h1,
     h2,
@@ -40,8 +39,9 @@ const StyledHeading = styled.article`
     h5,
     h6 {
     color: ${(props: Props)=> props.color || "#444444"};
+    margin: ${(props: Props)=> props.margin};
     font-family: ${(props: Props)=> props.font || "calibri"};
-    font-size: ${(props: Props)=> props.fontSize};
+    font-size: ${(props: Props)=> props.size};
     text-transform: ${(props: Props)=> props.transform};
     letter-spacing: ${(props: Props)=> props.letterSpacing};
     }
