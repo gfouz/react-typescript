@@ -52,8 +52,9 @@ export const theme: Props = {
    text-align: left;
    color:#444444;
   `,
-  container: (width) => `
-   max-width: ${width || "400px"};
+  container: (width, maxwidth) => `
+   width: ${width};
+   max-width: ${maxwidth};
    text-align: center;
    color:#444444;
   `,

@@ -9,7 +9,7 @@ interface Props {
   height?: string;
   padding?: string;
   simple?: string;
-  textAlign?: string;
+  align?: string;
   children?: React.ReactNode;
 }
 
@@ -24,7 +24,6 @@ export default Footer;
 
 const StyledFooter = styled.footer`
   position: relative;
-  display: flex;
   width: 100%;
   height: ${(props: Props) => props.height};
   padding: ${(props: Props)=> props.padding || "0"};
@@ -38,6 +37,6 @@ const StyledFooter = styled.footer`
       position: relative;
       height: var(--full-height);
       line-height: var(--full-height);
-      text-align: ${(props: Props) => props.textAlign || "center"};
+      text-align: ${(props: Props) => props.align || "center"};
     `};
 `;

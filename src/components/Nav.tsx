@@ -5,15 +5,13 @@ import { useLocation, Link } from "react-router-dom";
 interface Props {
   color?: string;
   bg?: string;
+  top?: string;
+  left?: string;
   mixed?: any;
-  fontFamily?: string;
-  fontweight?: string;
   position?: string;
   height?: string;
   margin?: string;
-  logo?: string;
-  display?: string;
-  children?: React.ReactNode;
+  padding?: string;
 }
 
 function Header(props: Props) {
@@ -26,11 +24,10 @@ function Header(props: Props) {
     <>
       <StyledHeader {...props}>
         <div className="links">
-          <div className="logo">{props.children}</div>
           {currentlinks.map((link, index) => (
             <div key={link + index}>
               <Link className="links__item" to={`${link}`}>
-                {link === "/" ? "home" : link.slice(1)}
+                <h4 className="">{link === "/" ? "home" : link.slice(1)}</h4>
               </Link>
             </div>
           ))}
@@ -45,15 +42,15 @@ const StyledHeader = styled.div`
 
   width: 100%;
   height: var(--tallness);
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: ${(props: Props) => props.margin || "margin: 0"};
-  background-color: ${(props: Props) => props.bg || "#444444"};
+  line-height: var(--tallness);
+  top: ${(props: Props) => props.top || "0"};
+  left: ${(props: Props) => props.left || "0"};
   position: ${(props: Props) => props.position};
-  font-weight: ${(props: Props) => props.fontweight || "normal"};
-
+  background-color: ${(props: Props) => props.bg};
+  margin: ${(props: Props) => props.margin || "0"};
+  padding: ${(props: Props) => props.padding || "0"};
   .links {
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     a {
@@ -61,21 +58,10 @@ const StyledHeader = styled.div`
       text-decoration: none;
       text-transform: uppercase;
       line-height: var(--tallness);
-      @media (max-width: 500px) {
-        display: ${(props: Props) => props.display};
-      }
-    }
-  }
-  .logo {
-    width: var(--tallness);
-    height: var(--tallness);
-    display: ${(props: Props) => props.logo || "none"};
-    justify-content: center;
-    align-items: center;
-    place-items: center;
-    img {
-      width: calc(var(--tallness) - 40%);
-      display: block;
+      transition: all 0.4s;
+    }  
+    a:hover {
+      color: #50a3c0;
     }
   }
   .hidden {

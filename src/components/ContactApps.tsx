@@ -5,15 +5,28 @@ import SvgEnvelope from "../icons/Envelope";
 import SvgTelegram from "../icons/Telegram";
 import SvgGitAlt from "../icons/GitAlt";
 
-const whatsappUrl: string =
-  "http://https://api.whatsapp.com/send?phone=+5354278815";
-const emailUrl: string = "mailto:gfouz1975@gmail.com";
-const githubUrl: string = "https://github.com/gfouz";
+interface Url {
+  email?: string;
+  github?: string;
+  whatsapp?: string;
+}
+
+const url: Url = {
+  email: "mailto:gfouz1975@gmail.com",
+  github: "https://github.com/gfouz",
+  whatsapp: "http://https://api.whatsapp.com/send?phone=+5354278815",
+};
 
 interface Props {
+  top?: string;
+  left?: string;
   size?: string;
+  bottom?: string;
   height?: string;
-  svgColor?: string;
+  margin?: string;
+  padding?: string;
+  svgcolor?: string;
+  position?: string;
 }
 interface Svg {
   size?: string;
@@ -23,29 +36,29 @@ interface Svg {
 function ContactApps(props: Props) {
   const svg: Svg = {
     size: props.size || "30px",
-    color: props.svgColor || "#ffffff",
+    color: props.svgcolor || "#222222",
   };
   return (
     <>
       <StyledMedia {...props}>
         <ul className="media-list">
           <li className="media-list__item">
-            <a href={whatsappUrl}>
+            <a href={url.whatsapp}>
               <SvgWhatsapp {...svg} />
             </a>
           </li>
           <li className="media-list__item">
-            <a href={whatsappUrl}>
+            <a href={url.whatsapp}>
               <SvgTelegram {...svg} />
             </a>
           </li>
           <li className="media-list__item">
-            <a href={githubUrl}>
+            <a href={url.github}>
               <SvgGitAlt {...svg} />
             </a>
           </li>
           <li className="media-list__item">
-            <a href={emailUrl}>
+            <a href={url.email}>
               <SvgEnvelope {...svg} />
             </a>
           </li>
@@ -57,7 +70,14 @@ function ContactApps(props: Props) {
 export default ContactApps;
 
 const StyledMedia = styled.nav`
-   width: 100%;
+  width: 100%;
+  top: ${(props: Props) => props.top};
+  left: ${(props: Props) => props.left};
+  bottom: ${(props: Props) => props.bottom};
+  margin: ${(props: Props) => props.margin || "0"};
+  padding: ${(props: Props) => props.padding || "0"};
+  position: ${(props: Props) => props.position};
+
   .media-list {
     padding: 0;
     width: 100%;

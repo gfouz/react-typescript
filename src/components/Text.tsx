@@ -1,10 +1,12 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { row, column, breakpoint } from '../mixins';
 
 interface Props {
    color?: string
-   fontFamily?: string
-   fontSize?: string
+   align?: string
+   fontfamily?: string
+   fontsize?: string
    width?: string
    maxwidth?: string
    padding?: string
@@ -22,17 +24,16 @@ const Text = (props: Props)=> {
 }
 export default Text;
 
-const StyledText = styled.article`
+const StyledText = styled.p`
   width: ${(props: Props)=> props.width};
-  max-width: ${(props: Props)=> props.maxwidth || "400px"};
+  text-align: ${(props: Props)=> props.align || "left"}
+  max-width: ${(props: Props)=> props.maxwidth};
   padding: ${(props: Props)=> props.padding};
   margin: ${(props: Props)=> props.margin};
-  p {
-    color: ${(props: Props) => props.color || "#777777"};
-    font-family: ${(props: Props) => props.fontFamily || "calibri"};
-    font-size: ${(props: Props) => props.fontSize};
-  }
-  @media (max-width: 820px) {
-    max-width: 100%;
+  color: ${(props: Props) => props.color || "#666666"};
+  font-family: ${(props: Props) => props.fontfamily || "calibri"};
+  font-size: ${(props: Props) => props.fontsize || "var(--global-fontsize)"};
+  @media (max-width: ${(props: Props) => breakpoint.xmd}){
+     max-width: 100%;
   }
 `;

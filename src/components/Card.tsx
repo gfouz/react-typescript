@@ -1,31 +1,24 @@
 import * as React from "react";
 import styled from "styled-components";
-import Div from "../components/Div";
-import Heading from "../components/Heading";
+import FlexBox from "../components/FlexBox";
+import Headline from "../components/Headline";
 import SpyGlass from "../icons/SpyGlass";
 
 const Card = () => {
   return (
     <StyledCard>
       <div className="card">
-        <Div
+        <FlexBox
           column
           radius="5px"
           justify="center"
           align="center"
-          width="400px"
           height="200px"
         >
-          <Heading color="#ffffff" padding="2em 0" size="2em">
-            <h1>Portfolio</h1>
-          </Heading>
-          <div>
-            <SpyGlass size="2em" color="#ffffff" />
-          </div>
-          <Heading color="#ffffff" padding="2em 0">
-            <h1>Loading...</h1>
-          </Heading>
-        </Div>
+          <Headline color="#ffffff"  text="Portfolio" />
+          <SpyGlass size="2em" color="#ffffff" />
+          <Headline color="#ffffff" text="Loading..." />
+       </FlexBox>
       </div>
     </StyledCard>
   );
@@ -41,8 +34,6 @@ const StyledCard = styled.div`
     text-align: center;
     background-color: #333333;
     border-radius: 8px;
-    h1 {
-      font-family: literata;
-    }
+
   }
 `;

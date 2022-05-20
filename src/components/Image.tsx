@@ -1,44 +1,67 @@
-import { theme } from "../theme";
-import styled, { ThemeProvider } from "styled-components";
+import * as React from "react";
+import styled, { css } from "styled-components";
 
 interface Props {
   src?: string;
   alt?: string;
-  margin?: string;
-  padding?: string;
+  top?: string;
+  left?: string;
+  right?: string;
+  auto?: boolean;
+  float?: string;
   align?: string;
   width?: string;
-  maxwidth?: string;
-  size?: string;
+  bottom?: string;
+  radius?: string;
   height?: string;
-  imageheight?: string;
+  cover?: boolean;
+  margin?: string;
+  padding?: string;
+  position?: string;
+  maxwidth?: string;
+  boxshadow?: string;
+  centered?: boolean;
   children?: React.ReactNode;
 }
 const Image = (props: Props) => {
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <StyledImage {...props}>
-          <img src={props.src} alt={props.alt}/>
-        </StyledImage>
-      </ThemeProvider>
+      <StyledImage {...props} />
     </>
   );
 };
 
 export default Image;
-const StyledImage = styled.div`
-    height: ${(props: Props) => props.height || "100%"};
-    text-align: ${(props: Props)=> props.align || "center"};
-    max-width: ${(props: Props) => props.maxwidth || "400px"};
-    width: ${(props: Props) => props.width || "400px"}
-    padding: ${(props: Props) => props.padding || "0"};
-    img {
-    margin: ${(props: Props) => props.margin || "0"};  
-    max-width: ${(props: Props) => props.size || "100%"};
-    height: ${(props: Props)=> props.imageheight || "auto"};
-    object-fit: ${(props: Props)=> props.fit || "none"};
-    }
-    
-    
+const StyledImage = styled.img`
+  ${(props: Props) =>
+    props.cover &&
+    css`
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    `};
+  ${(props: Props) =>
+    props.auto &&
+    css`
+      max-width: 100%;
+      height: auto;
+    `};
+  ${(props: Props) =>
+    props.centered &&
+    css`
+      transform: translate(-50%);
+    `};  
+
+  top: ${(props: Props) => props.top};
+  left: ${(props: Props) => props.left};
+  width: ${(props: Props) => props.width};
+  right: ${(props: Props) => props.right};
+  bottom: ${(props: Props) => props.bottom};
+  position: ${(props: Props) => props.position};
+  max-width: ${(props: Props) => props.maxwidth};
+  float: ${(props: Props) => props.float || "none"};
+  margin: ${(props: Props) => props.margin || "0"};
+  padding: ${(props: Props) => props.padding || "0"};
+  border-radius: ${(props: Props) => props.radius || "0"};
+  box-shadow: ${(props: Props) => props.boxshadow || "0"};
 `;

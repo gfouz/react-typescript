@@ -50,7 +50,7 @@ const ReactHookForm = () => {
                   variant="outlined"
                   margin="normal"
                   label="Email"
-                  color={errors.email ? "secondary" : "primary"}
+                  color= {errors.email ? "secondary" : "primary"}
                 />
                 {errors.email?.type === "pattern" && (
                   <span className="textfield__warning">
@@ -104,6 +104,7 @@ export default ReactHookForm;
 
 const StyledForm = styled.div`
   .form {
+    text-align: center;
   }
   .textfield {
     display: flex;

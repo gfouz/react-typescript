@@ -21,8 +21,9 @@ code {
 }
 
 @font-face {
- font-family: "Literata";
- src: local("Literata"),
- url("./fonts/literata.ttf") format("truetype");
- font-weight: normal;
+ font-family: "junegull";
+ src: local("junegull"),
+ url("./fonts/junegull.ttf") format("truetype");
+ font-weight: bolder;
 }
+
