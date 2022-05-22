@@ -27,7 +27,6 @@ function Contact() {
             <Box column>
               <Nav {...navbar} />
               <Headline {...title} />
-              <Headline {...subtitle}/>
               <div className="message__bottom">
                <p className="message__md">
                  "El tiempo es el único capital de las personas 
@@ -46,7 +45,7 @@ function Contact() {
             <Image {...contactImage} centered />
            </div> 
            <div className="message__top">
-             <SpyGlass color="#3c5fbd" size="3em" />
+             <SpyGlass color="#222222" size="3em" />
            </div> 
             <Box column>
               <Headline {...contactme} />
@@ -66,7 +65,7 @@ const StyledContact = styled.div`
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url("./images/space.jpg");
+    background-image: url("./images/mount.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

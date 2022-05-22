@@ -1,16 +1,16 @@
 export const title = {
   color: "#ffffff",
   text: "Hello World",
-  family: "junegull",
+  family: "orangina",
   fontsize: "1.7em",
   space: "5px",
   position: "relative",
-  bottom: "113px"
+  bottom: "1em"
 };
 export const contactme = {
-  color: "#3f51b5",
+  color: "#4a80fc",
   text: "contact me",
-  family: "junegull",
+  family: "orangina",
   fontsize: "1.7em",
   space: "5px",
   margin: "1em 0",
@@ -34,7 +34,7 @@ export const navbar= {
 export const contactApps = {
   size: "20px",
   svgcolor: "#222222",
-  padding: "2em 0",
+  padding: "1em 0",
   position: "absolute",
   bottom: "0",
 };

@@ -21,7 +21,7 @@ const maintitle: object = {
 	position:"relative",
 	color:"#e6e6fa",
 	space:"5px",
-	family:"junegull"  
+	family:"orangina"  
 }
 
 const Homepage = () => {

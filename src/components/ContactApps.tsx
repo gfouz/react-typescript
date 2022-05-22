@@ -81,7 +81,7 @@ const StyledMedia = styled.nav`
   .media-list {
     padding: 0;
     width: 100%;
-    height: ${(props: Props) => props.height || "auto"};
+    height: ${(props: Props) => props.height};
     display: flex;
     justify-content: space-evenly;
     align-items: center;
