@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { row, column } from "../mixins";
 
 interface Props {
-	bg?: string;
+  bg?: string;
   max?: string;
   min?: string;
   row?: boolean;
@@ -16,8 +16,10 @@ interface Props {
   column?: boolean;
   padding?: string;
   textalign?: string;
+  boxProps?: () => string;
   children?: React.ReactNode;
 }
+
 function Box(props: Props) {
   return <StyledBox {...props}>{props.children}</StyledBox>;
 }
@@ -31,7 +33,7 @@ const StyledBox = styled.div`
   min-width: ${(props: Props) => props.min};
   margin: ${(props: Props) => props.margin};
   padding: ${(props: Props) => props.padding};
-  background-color: ${(props: Props)=> props.bg};
+  background-color: ${(props: Props) => props.bg};
   text-align: ${(props: Props) => props.textalign};
 
   ${(props: Props) =>
@@ -40,10 +42,13 @@ const StyledBox = styled.div`
       ${row(props.justify, props.align)};
       height: ${(props: Props) => props.height || "100%"};
     `};
+
   ${(props: Props) =>
     props.column &&
     css`
       ${column(props.justify, props.align)};
       height: ${(props: Props) => props.height || "100%"};
     `};
+
+  ${(props: Props) => props.boxProps};
 `;

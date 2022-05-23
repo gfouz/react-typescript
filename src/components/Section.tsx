@@ -13,6 +13,7 @@ interface Props {
   justify?: string;
   direction?: string;
   resize?: string;
+  SectionStyles?: string;
   children?: React.ReactNode;
 }
 
@@ -29,7 +30,7 @@ export default Section;
 const StyledSection = styled.section`
   width: 100%;
   position: relative;
-  height: ${(props: Props) => props.height};
+  height: ${(props: Props) => props.height || "100%"};
   margin: ${(props: Props) => props.margin || "0"};
   padding: ${(props: Props) => props.padding || "0"};
   ${(props: Props) => row(props.justify, props.align)};
@@ -38,4 +39,5 @@ const StyledSection = styled.section`
   @media (max-width: ${(props: Props) => props.rezise || breakpoint.xmd}) {
     ${(props: Props) => column(props.justify, props.align)};
   }
+  ${(props: Props)=> props.SectionStyles}; 
 `;

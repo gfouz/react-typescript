@@ -30,3 +30,4 @@ export const breakpoint = {
   xl: "1200px",
   xxl: "1400px",
 };
+

@@ -14,6 +14,7 @@ html {
 }
 body {
   margin: 0;
+  height: 100%;
   min-height: 100vh;
 }
 
@@ -28,4 +29,11 @@ code {
  url("./fonts/orangina.otf") format("opentype");
  font-weight: bolder;
 }
+@font-face {
+ font-family: "tenorite";
+ src: local("tenorite"),
+ url("./fonts/tenorite.ttf") format("truetype");
+ font-weight: bolder;
+}
+
 

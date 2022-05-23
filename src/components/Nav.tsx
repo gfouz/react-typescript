@@ -38,11 +38,11 @@ function Header(props: Props) {
 }
 export default Header;
 const StyledHeader = styled.div`
-  --tallness: ${(props: Props) => props.height || "60px"};
+  --fullheight: ${(props: Props) => props.height};
 
   width: 100%;
-  height: var(--tallness);
-  line-height: var(--tallness);
+  height: var(--fullheight);
+  line-height: var(--fullheight);
   top: ${(props: Props) => props.top || "0"};
   left: ${(props: Props) => props.left || "0"};
   position: ${(props: Props) => props.position};
@@ -57,7 +57,7 @@ const StyledHeader = styled.div`
       color: ${(props: Props) => props.color || "#ffffff"};
       text-decoration: none;
       text-transform: uppercase;
-      line-height: var(--tallness);
+      line-height: var(--fullheight);
       transition: all 0.4s;
     }  
     a:hover {

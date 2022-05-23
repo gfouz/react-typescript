@@ -1,5 +1,5 @@
 import * as React from "react";
-import {breakpoint} from  '../../mixins';
+import { breakpoint } from "../../mixins";
 import styled from "styled-components";
 import Box from "../../components/Box";
 import Nav from "../../components/Nav";
@@ -10,6 +10,8 @@ import Form from "../../components/Form";
 import ContactApps from "../../components/ContactApps";
 import Headline from "../../components/Headline";
 import {
+  primaryBox,
+  secondaryBox,
   title,
   contactme,
   contactImage,
@@ -23,30 +25,30 @@ function Contact() {
     <>
       <StyledContact>
         <Section>
-          <div className="main">
-            <Box column>
-              <Nav {...navbar} />
-              <Headline {...title} />
-              <div className="message__bottom">
-               <p className="message__md">
-                 "El tiempo es el único capital de las personas 
-                 que no tienen más que su inteligencia por fortuna." 
-                 <p>Honoré de Balzac.</p>
-               </p>
-               <div className="message__sm">
-                   <Image src="./images/contact.png"/>
-                   <h6>WRITE ME BELOW</h6>
-               </div>
-              </div> 
-            </Box>
-          </div>
-          <Box height="100vh">
-           <div className="message__md">
-            <Image {...contactImage} centered />
-           </div> 
-           <div className="message__top">
-             <SpyGlass color="#222222" size="3em" />
-           </div> 
+          <Box boxProps={primaryBox} justify="space-between" column>
+            <Nav {...navbar} />
+            <Headline {...title} />
+            <div className="message__bottom">
+              <p className="message__md">
+                "Imagine what a good thing it could be if every single person
+                both young and old shared a little of what he is good at doing
+                ."
+                <br />
+                Quince Jones.
+              </p>
+              <div className="message__sm">
+                <Image src="./images/contact.png" />
+                <h6>WRITE ME BELOW</h6>
+              </div>
+            </div>
+          </Box>
+          <Box boxProps={secondaryBox} justify="space-between" column>
+            <div className="message__md">
+              <Image {...contactImage} />
+            </div>
+            <div className="message__top">
+              <SpyGlass color="#222222" size="3em" />
+            </div>
             <Box column>
               <Headline {...contactme} />
               <Form />
@@ -60,41 +62,31 @@ function Contact() {
 }
 export default Contact;
 const StyledContact = styled.div`
-  width: 100%;
-  .main {
-    position: relative;
     width: 100%;
-    height: 100vh;
-    background-image: url("./images/mount.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  .message__top {
+    height: 100%;
+    font-family: tenorite;
+    .message__top {
     position: relative;
-    top: 6em;
+    top: 2em;
     text-align: center;
     @media (min-width: ${breakpoint.xmd}){
       display: none;
-   }
-  }
-  .message__bottom {
-    position: absolute;
-    left: 50%;
-    bottom: 4em;
-    font-family: calibri;
-    transform: translate(-50%);
-  }
-  .message__sm {
+    }
+    }
+    .message__bottom {
+       padding: 2em;
+    }
+   .message__sm {
    color: #ffffff; 
    text-align: center;
    @media (min-width: ${breakpoint.xmd}){
       display: none;
    }
-  }
-  .message__md {
+   }
+   .message__md {
    color: #ffffff; 
+   font-family: tenorite;
    @media (max-width: ${breakpoint.xmd}){
     display: none;
-  }
+   }
 `;
